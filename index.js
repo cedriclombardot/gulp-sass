@@ -80,8 +80,8 @@ module.exports = function (options) {
   	if ( opts.sync ) {
   	  try {
   	    var output = nodeSass.renderSync(opts);
-  	    opts.success(output, null);
-  	    handleOutput(output, file, cb);
+  	    opts.success(output.css, null);
+  	    handleOutput(output.css, file, cb);
   	  } catch(err) {
   	    opts.error(err);
   	  }
