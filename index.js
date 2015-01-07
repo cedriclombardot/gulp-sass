@@ -41,7 +41,9 @@ module.exports = function (options) {
       opts.includePaths = [fileDir];
     }
 
-    opts.success = function (css, sourceMap) {
+    opts.success = function (res, sourceMap) {
+      var css = res.css;
+
       if (typeof opts.onSuccess === 'function') opts.onSuccess(css, sourceMap);
 
       if (sourceMap) {
